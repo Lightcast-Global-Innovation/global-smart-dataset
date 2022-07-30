@@ -1,22 +1,15 @@
 
 
 from lightcast_insight.occupation_insight import OccupationInsight, \
-    BasicOccupationInsightResponseParser, \
-    OccupationInsightRequestClient, \
     OccupationInsightRequest, \
     OccupationInsightResponse
 
 
 class Global:
 
-    def __init__(self, username: str, password: str) -> None:
+    def __init__(self, occupation_insight: OccupationInsight) -> None:
         super(Global, self).__init__()
-        url = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1/global"
-        self.__occupation_insight = OccupationInsight(url=url,
-                                                      username=username,
-                                                      password=password,
-                                                      insight_response=BasicOccupationInsightResponseParser(),
-                                                      insight_request=OccupationInsightRequestClient())
+        self.__occupation_insight = occupation_insight
 
     def getOccupationInsight(self,
                              occupation: str = "",

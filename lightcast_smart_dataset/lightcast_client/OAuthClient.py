@@ -9,7 +9,7 @@ class OAuthClient:
         self.__username = username
         self.__password = password
 
-    def getAuthorizationString(self):
+    def getAuthorizationString(self):  # pragma: no cover
         login_payload = {
             "username": self.__username,
             "password": self.__password

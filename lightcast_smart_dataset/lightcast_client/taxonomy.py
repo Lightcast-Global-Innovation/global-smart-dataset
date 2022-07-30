@@ -1,19 +1,14 @@
 
 from lightcast_insight.taxonomy_insight import TaxonomyInsight, \
-    TaxonomyRequestClient, \
     TaxonomyRequest, \
-    TaxonomyResponse, \
-    BasicTaxonomyResponseParser
+    TaxonomyResponse
 
 
 class Taxonomy:
 
-    def __init__(self, username: str, password: str) -> None:
+    def __init__(self, client: TaxonomyInsight) -> None:
         super(Taxonomy, self).__init__()
-        self.__client = TaxonomyInsight(username=username,
-                                        password=password,
-                                        response=BasicTaxonomyResponseParser(),
-                                        request=TaxonomyRequestClient())
+        self.__client = client
 
     def getSocLevel4(self) -> TaxonomyResponse:
         request = TaxonomyRequest()

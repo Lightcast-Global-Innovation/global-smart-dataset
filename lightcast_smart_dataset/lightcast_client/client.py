@@ -2,6 +2,12 @@
 from lightcast_client.uk_dataset import UK
 from lightcast_client.global_dataset import Global
 from lightcast_client.taxonomy import Taxonomy
+from lightcast_insight.occupation_insight import OccupationInsight, \
+    BasicOccupationInsightResponseParser, \
+    OccupationInsightRequestClient
+from lightcast_insight.taxonomy_insight import TaxonomyInsight, \
+    TaxonomyRequestClient, \
+    BasicTaxonomyResponseParser
 
 
 class LightcastSmartDataset():
@@ -23,11 +29,28 @@ class LightcastSmartDataset():
 
         self.__password = password
 
-    def ukDataset(self) -> UK:
-        return UK(self.__username, self.__password)
+    def ukDataset(self) -> UK:  # pragma: no cover
+        url = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1/uk"
+        self.__uk_occupation_insight = OccupationInsight(url=url,
+                                                         username=self.__username,
+                                                         password=self.__password,
+                                                         insight_response=BasicOccupationInsightResponseParser(),
+                                                         insight_request=OccupationInsightRequestClient())
+        return UK(self.__uk_occupation_insight)
 
-    def globalDataset(self) -> Global:
-        return Global(self.__username, self.__password)
+    def globalDataset(self) -> Global:  # pragma: no cover
+        url = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1/global"
+        if (self.__global_occs_insight is None):
+            self.__global_occs_insight = OccupationInsight(url=url,
+                                                           username=self.__username,
+                                                           password=self.__password,
+                                                           insight_response=BasicOccupationInsightResponseParser(),
+                                                           insight_request=OccupationInsightRequestClient())
+        return Global(self.__global_occs_insight)
 
-    def taxonomy(self) -> Taxonomy:
-        return Taxonomy(self.__username, self.__password)
+    def taxonomy(self) -> Taxonomy:  # pragma: no cover
+        self.__taxonomuy_client = TaxonomyInsight(username=self.__username,
+                                                  password=self.__password,
+                                                  response=BasicTaxonomyResponseParser(),
+                                                  request=TaxonomyRequestClient())
+        return Taxonomy(self.__taxonomuy_client)
