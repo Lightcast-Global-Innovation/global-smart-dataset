@@ -121,8 +121,7 @@ class OccupationInsightResponse:
 
     @salary_min.setter
     def salary_min(self, salary_min: str) -> None:
-        if salary_min is not None and not isinstance(salary_min, float):
-            raise TypeError("salary_min must be a float")
+
         self.__salary_min = salary_min
 
     @property
@@ -131,8 +130,7 @@ class OccupationInsightResponse:
 
     @salary_max.setter
     def salary_max(self, salary_max: str) -> None:
-        if salary_max is not None and not isinstance(salary_max, float):
-            raise TypeError("salary_max must be a float")
+
         self.__salary_max = salary_max
 
     @property
@@ -141,8 +139,7 @@ class OccupationInsightResponse:
 
     @salary_median.setter
     def salary_median(self, salary_median: str) -> None:
-        if salary_median is not None and not isinstance(salary_median, float):
-            raise TypeError("salary_median must be a float")
+
         self.__salary_median = salary_median
 
     @property

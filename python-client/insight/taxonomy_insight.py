@@ -87,7 +87,7 @@ class TaxonomyRequestClient(TaxonomyRequest):
         return response.text.encode('utf8')
 
 
-class Taxonomy:
+class TaxonomyInsight:
 
     def __init__(self,
                  url: str = "https://solutions-api.lightcast.io/smart-dataset/taxonomies",
