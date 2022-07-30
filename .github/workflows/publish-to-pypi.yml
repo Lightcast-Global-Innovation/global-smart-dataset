@@ -33,6 +33,12 @@ jobs:
       - name: Check flake8
         run: >-
           flake8 python-client
+      - name: Coverage
+        run: >-
+          coverage run -m unittest discover
+      - name: Coverage Report
+        run: >-
+          coverage report -m --fail-under
       - name: Build a binary wheel and a source tarball
         run: >-
           python -m

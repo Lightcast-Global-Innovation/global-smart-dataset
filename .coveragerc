@@ -2,7 +2,7 @@
 branch = True
 
 source =
-    client
+    python-client
 
 omit =
     */tests/*
