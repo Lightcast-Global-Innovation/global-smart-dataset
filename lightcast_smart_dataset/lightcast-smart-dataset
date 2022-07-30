@@ -111,6 +111,16 @@ if __name__ == '__main__':
             print(response.raw_response.decode("utf-8"))
             export_results(response)
 
+        if args.get('occupation') and args.get('occupation-insight'):
+            response = client.ukDataset().getOccupationInsight(
+                occupation=occupation,
+                occupation_level=occupation_level,
+                area=area,
+                area_level=area_level
+            )
+            print(response.raw_response.decode("utf-8"))
+            export_results(response)
+
     elif args.get('global'):
         client = LightcastSmartDataset(username=username, password=password)
         if args.get('occupation-insight'):
