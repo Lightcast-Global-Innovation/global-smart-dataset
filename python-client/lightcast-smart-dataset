@@ -72,7 +72,7 @@ if __name__ == '__main__':
     area_level = args.get('--area-level')
 
     if args.get('uk'):
-        client = LightcastSmartDataset(username=username, pasword=password)
+        client = LightcastSmartDataset(username=username, password=password)
         if args.get('soc') and args.get('occupation-insight'):
             response = client.ukDataset().getSocOccupationInsight(
                 occupation=occupation,
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             export_results(response)
 
     elif args.get('global'):
-        client = LightcastSmartDataset(username=username, pasword=password)
+        client = LightcastSmartDataset(username=username, password=password)
         if args.get('occupation-insight'):
             response = client.globalDataset().getOccupationInsight(
                 occupation=occupation,
