@@ -2,7 +2,7 @@
 branch = True
 
 source =
-    python-client
+    lightcast_smart_dataset
 
 omit =
     */tests/*
