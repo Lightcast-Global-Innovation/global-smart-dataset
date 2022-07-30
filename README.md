@@ -15,6 +15,9 @@ The Global Smart Dataset are available:
 For documentation is open at:
 https://solutions-api.lightcast.io/docs
 
+To use the API and the Global Lightcast Smart Dataaset you need a Username and a Password. Please contact our sales team @ sales-europe@lightcast.io or go to our web site
+https://lightcast.io/euro/contact
+
 
 Notebooks:
 - [Global Smart Dataset - Notebooks](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/blob/main/notebooks/Lightcast_Global_Smart_Dataset.ipynb)

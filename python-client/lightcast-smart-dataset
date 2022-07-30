@@ -26,7 +26,6 @@ Options:
     --area-level=<level>          Level 1,2,3,4 (for UK) or 1,2 (for Global)
     --occupation-level<level>     Level 1,2,3,4 (for Lightcast) or 1,2,3,4 (for SOC)
 """
-from requests_toolbelt import user_agent
 from client.client import LightcastSmartDataset
 from docopt import docopt
 import sys
