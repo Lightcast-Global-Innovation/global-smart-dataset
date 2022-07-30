@@ -1,4 +1,4 @@
-# Global Smart Dataset
+# Lightcast Global Smart Dataset
 
 ![](https://raw.githubusercontent.com/Lightcast-Global-Innovation/global-smart-dataset/main/Lighcast_RGB_Lockup_Color.png)
 
@@ -6,6 +6,12 @@
 This repository aims to show the use of Lightcast Global Smart Dataset.
 
 ![build](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/actions/workflows/publish-to-pypi.yml/badge.svg)
+
+[![Documentation Status](https://readthedocs.org/projects/contrxt/badge/?version=latest)](https://lightcast-global-smart-dataset.readthedocs.io/en/latest/?badge=latest)
+[![Pypi Downloads](https://img.shields.io/pypi/dm/contrxt.svg?label=Pypi%20downloads)](https://pypi.org/project/lightcast-smart-dataset/)
+
+[![Stars](https://img.shields.io/github/stars/Lightcast-Global-Innovation/global-smart-dataset?style=social)](https://github.com/Lightcast-Global-Innovation/global-smart-dataset)
+[![Watchers](https://img.shields.io/github/watchers/Lightcast-Global-Innovation/global-smart-dataset?style=social)](https://github.com/Lightcast-Global-Innovation/global-smart-dataset)
 
 The Global Smart Dataset allows you to quickly access data from Lightcast's database to obtain contents, trends and projections regarding the labour market.
 
