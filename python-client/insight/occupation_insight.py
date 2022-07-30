@@ -149,6 +149,50 @@ class OccupationInsightResponse:
             raise TypeError("salary_median must be a float")
         self.__salary_median = salary_median
 
+    @property
+    def top_10_common_skills(self) -> list:
+        return self.__top_10_common_skills
+
+    @top_10_common_skills.setter
+    def top_10_common_skills(self, top_10_common_skills: list) -> None:
+        if top_10_common_skills is not None and not \
+           isinstance(top_10_common_skills, list):
+            raise TypeError("top_10_common_skills must be a list")
+        self.__top_10_common_skills = top_10_common_skills
+
+    @property
+    def top_10_specialized_skills(self) -> list:
+        return self.__top_10_specialized_skills
+
+    @top_10_specialized_skills.setter
+    def top_10_specialized_skills(self, top_10_specialized_skills: list) -> None:
+        if top_10_specialized_skills is not None and not \
+           isinstance(top_10_specialized_skills, list):
+            raise TypeError("top_10_specialized_skills must be a list")
+        self.__top_10_specialized_skills = top_10_specialized_skills
+
+    @property
+    def top_10_job_titles(self) -> list:
+        return self.__top_10_job_titles
+
+    @top_10_job_titles.setter
+    def top_10_job_titles(self, top_10_job_titles: list) -> None:
+        if top_10_job_titles is not None and not \
+           isinstance(top_10_job_titles, list):
+            raise TypeError("top_10_job_titles must be a list")
+        self.__top_10_job_titles = top_10_job_titles
+
+    @property
+    def top_10_employers(self) -> list:
+        return self.__top_10_employers
+
+    @top_10_employers.setter
+    def top_10_employers(self, top_10_employers: list) -> None:
+        if top_10_employers is not None and not \
+           isinstance(top_10_employers, list):
+            raise TypeError("top_10_employers must be a list")
+        self.__top_10_employers = top_10_employers
+
 
 class ResponseInsight(metaclass=ABCMeta):
 
@@ -243,6 +287,11 @@ class BasicOccupationInsightResponseParser(ResponseInsight):
         salary_min = json_response["salary"]["min"]
         salary_median = json_response["salary"]["median"]
 
+        top_10_employers = json_response["top_10_employers"]["results"]
+        top_10_job_titles = json_response["top_10_job_titles"]["results"]
+        top_10_common_skills = json_response["top_10_common_skills"]["results"]
+        top_10_specialized_skills = json_response["top_10_common_skills"]["results"]
+
         response = OccupationInsightResponse()
         response.raw_response = raw_response
         response.refresh_date = refresh_date
@@ -251,4 +300,10 @@ class BasicOccupationInsightResponseParser(ResponseInsight):
         response.salary_max = salary_max
         response.salary_min = salary_min
         response.salary_median = salary_median
+
+        response.top_10_common_skills = top_10_common_skills
+        response.top_10_specialized_skills = top_10_specialized_skills
+        response.top_10_job_titles = top_10_job_titles
+        response.top_10_employers = top_10_employers
+
         return response

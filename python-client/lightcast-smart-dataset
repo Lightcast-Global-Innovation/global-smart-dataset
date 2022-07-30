@@ -26,6 +26,7 @@ Options:
     --area-level=<level>          Level 1,2,3,4 (for UK) or 1,2 (for Global)
     --occupation-level<level>     Level 1,2,3,4 (for Lightcast) or 1,2,3,4 (for SOC)
 """
+from requests_toolbelt import user_agent
 from client.client import LightcastSmartDataset
 from docopt import docopt
 import sys
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     area_level = args.get('--area-level')
 
     if args.get('uk'):
-        client = LightcastSmartDataset(region=username, pasword=password)
+        client = LightcastSmartDataset(username=username, pasword=password)
         if args.get('soc') and args.get('occupation-insight'):
             response = client.ukDataset().getSocOccupationInsight(
                 occupation=occupation,
@@ -52,7 +53,7 @@ if __name__ == '__main__':
             print(response.raw_response.decode("utf-8"))
 
     elif args.get('global'):
-        client = LightcastSmartDataset(region=username, pasword=password)
+        client = LightcastSmartDataset(username=username, pasword=password)
         if args.get('occupation-insight'):
             response = client.globalDataset().getOccupationInsight(
                 occupation=occupation,
