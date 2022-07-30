@@ -17,7 +17,7 @@ https://solutions-api.lightcast.io/docs
 
 
 Notebooks:
-- [Occupation Insight](https://github.com/mauropelucchi/europython2022/raw/main/Datawarehouses_meet_datalake_MauroPelucchi_Europython2022.pdf)
+- [Global Smart Dataset - Notebooks](https://raw.githubusercontent.com/Lightcast-Global-Innovation/global-smart-dataset/main/notebooks/Lightcast_Global_Smart_Dataset.ipynb)
 
 
 # MIT License
