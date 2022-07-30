@@ -1,12 +1,12 @@
 
-from client.client import Source
 from insight.occupation_insight import OccupationInsight, \
     BasicOccupationInsightResponseParser, \
     OccupationInsightRequestClient, \
-    OccupationInsightRequest
+    OccupationInsightRequest, \
+    OccupationInsightResponse
 
 
-class UK(Source):
+class UK:
 
     def __init__(self, username: str, password: str) -> None:
         super(UK, self).__init__()
@@ -19,7 +19,7 @@ class UK(Source):
                                 occupation: str = "",
                                 occupation_level: str = "4",
                                 area: str = "",
-                                area_level: str = "3") -> str:
+                                area_level: str = "3") -> OccupationInsightResponse:
         request = OccupationInsightRequest()
         request.occupation = occupation
         request.area = area
@@ -29,4 +29,20 @@ class UK(Source):
         request.area_classification = "nuts"
 
         response = self.__occupation_insight.insight(request)
-        return response.raw_response.decode("utf-8")
+        return response
+
+    def getOccupationInsight(self,
+                             occupation: str = "",
+                             occupation_level: str = "4",
+                             area: str = "",
+                             area_level: str = "3") -> OccupationInsightResponse:
+        request = OccupationInsightRequest()
+        request.occupation = occupation
+        request.area = area
+        request.occupation_level = occupation_level
+        request.area_level = area_level
+        request.occupation_classification = "occupation"
+        request.area_classification = "nuts"
+
+        response = self.__occupation_insight.insight(request)
+        return response

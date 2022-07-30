@@ -1,11 +1,6 @@
 
-from abc import ABCMeta
 from client.uk_dataset import UK
 from client.global_dataset import Global
-
-
-class Source(metaclass=ABCMeta):
-    pass
 
 
 class LightcastSmartDataset():

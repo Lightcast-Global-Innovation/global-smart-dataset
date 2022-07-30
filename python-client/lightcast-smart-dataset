@@ -62,7 +62,7 @@ if __name__ == '__main__':
                 area=area,
                 area_level=area_level
             )
-            print(area_level)
+            print(response.raw_response.decode("utf-8"))
 
     elif args.get('global'):
         client = LightcastSmartDataset(region=username, pasword=password)
@@ -73,7 +73,7 @@ if __name__ == '__main__':
                 area=area,
                 area_level=area_level
             )
-            print(area_level)
+            print(response.raw_response.decode("utf-8"))
     else:
         print('[ERROR] Invalid operation, please check usage again',
               file=sys.stderr)

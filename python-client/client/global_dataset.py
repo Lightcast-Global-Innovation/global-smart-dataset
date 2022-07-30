@@ -1,13 +1,13 @@
 
 
-from client.client import Source
 from insight.occupation_insight import OccupationInsight, \
     BasicOccupationInsightResponseParser, \
     OccupationInsightRequestClient, \
-    OccupationInsightRequest
+    OccupationInsightRequest, \
+    OccupationInsightResponse
 
 
-class Global(Source):
+class Global:
 
     def __init__(self, username: str, password: str) -> None:
         super(Global, self).__init__()
@@ -20,7 +20,7 @@ class Global(Source):
                              occupation: str = "",
                              occupation_level: str = "4",
                              area: str = "",
-                             area_level: str = "3") -> str:
+                             area_level: str = "3") -> OccupationInsightResponse:
         request = OccupationInsightRequest()
         request.occupation = occupation
         request.area = area
@@ -30,4 +30,4 @@ class Global(Source):
         request.area_classification = "global"
 
         response = self.__occupation_insight.insight(request)
-        return response.raw_response.decode("utf-8")
+        return response
