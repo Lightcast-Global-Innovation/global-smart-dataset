@@ -97,6 +97,17 @@ class OccupationInsightResponse:
             raise TypeError("refresh_date must be a string")
         self.__refresh_date = refresh_date
 
+    @property
+    def current_year_active_postings(self) -> list:
+        return self.__current_year_active_postings
+
+    @current_year_active_postings.setter
+    def current_year_active_postings(self, current_year_active_postings: list) -> None:
+        if current_year_active_postings is not None and not \
+           isinstance(current_year_active_postings, list):
+            raise TypeError("current_year_active_postings must be a string")
+        self.__current_year_active_postings = current_year_active_postings
+
 
 class ResponseInsight(metaclass=ABCMeta):
 
@@ -186,9 +197,11 @@ class BasicOccupationInsightResponseParser(ResponseInsight):
             raise Exception(error_message)
 
     def deserialize(self, raw_response: str):
-        json_response = json.loads(response)
+        json_response = json.loads(raw_response)
         refresh_date = json_response["date"]
+        current_year_active_postings = json_response["current_year_active_postings"]["results"]
         response = OccupationInsightResponse()
         response.raw_response = raw_response
         response.refresh_date = refresh_date
+        response.current_year_active_postings = current_year_active_postings
         return response
