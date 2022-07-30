@@ -10,7 +10,7 @@ class UK:
 
     def __init__(self, username: str, password: str) -> None:
         super(UK, self).__init__()
-        url = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1/uk",
+        url = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1/uk"
         self.__occupation_insight = OccupationInsight(url=url,
                                                       username=username,
                                                       password=password,
