@@ -23,6 +23,7 @@ https://lightcast.io/euro/contact
 
 Notebooks:
 - [Global Smart Dataset - Notebooks](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/blob/main/notebooks/Lightcast_Global_Smart_Dataset.ipynb)
+- [Global Smart Dataset - Client Notebooks](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/blob/main/notebooks/Lightcast_Global_Smart_Dataset_Client.ipynb)
 
 
 # MIT License

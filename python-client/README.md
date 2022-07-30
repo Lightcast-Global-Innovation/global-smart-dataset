@@ -1,4 +1,4 @@
-## Global Ligjtcast Smart Dataset Client
+## Global Lightcast Smart Dataset Client
 
 The goal of this project is to propose a Python Client, easy to use, ready for everyone to access and use in few seconds the Global Lightcast Smart Dataset
 
