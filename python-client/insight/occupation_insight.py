@@ -276,6 +276,8 @@ class BasicOccupationInsightResponseParser(ResponseInsight):
         pass
 
     def deserialize(self, raw_response: str):
+
+        print(raw_response)
         json_response = json.loads(raw_response)
         refresh_date = json_response["date"]
 
