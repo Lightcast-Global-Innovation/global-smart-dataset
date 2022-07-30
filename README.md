@@ -1,6 +1,6 @@
 # Global Smart Dataset
 
-![](https://raw.githubusercontent.com/mauropelucchi/europython2022/main/ep2022.png)
+![](https://raw.githubusercontent.com/Lightcast-Global-Innovation/global-smart-dataset/main/Lighcast_RGB_Lockup_Color.png)
 
 
 This repository aims to show the use of Lightcast Global Smart Dataset.
