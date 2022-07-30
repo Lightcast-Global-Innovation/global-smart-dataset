@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name='lightcast-smart-dataset',
-    version='0.1.30',
+    version='0.1.31',
     scripts=['lightcast-smart-dataset'],
     author="Global Data Science Team - Lightcast",
     author_email="globaldatascience@lightcast.io",

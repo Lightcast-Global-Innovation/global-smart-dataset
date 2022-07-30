@@ -1,4 +1,4 @@
-from lightcast_smart_dataset.lightcast_client.client import LightcastSmartDataset
+from lightcast_client.client import LightcastSmartDataset
 
 USERNAME = "xxxx"
 PSWD = "xxxx"

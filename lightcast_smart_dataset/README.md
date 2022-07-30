@@ -20,12 +20,15 @@ You can use the client in two ways:
 
 This module is using [docopt](http://docopt.org/) to parse command line arguments.
 
-It currently different methods:
+It proposes different methods:
 
-1. Get the occupation insights for software developers in a area of UK
+1. Get the occupation insights for an occupation in a area of UK
   * `lightcast-smart-dataset uk occupation-insight soc --username=**** --password=**** --occupation="Programmers and software development professionals" --area="Camden and City of London"`
+  * `lightcast-smart-dataset uk occupation-insight occupation --username=***** --password=**** --occupation="Programmers and software development professionals" --area="Camden and City of London"`
 2. Get the occupation insights for software developers in Milan, Italy
-  * `lightcast-smart-dataset global occupation-insight occupation --username=**** --password=**** --occupation="Data analysys" --area="Camden and City of London"`
+  * `lightcast-smart-dataset global occupation-insight occupation --username=***** --password=**** --occupation="Business Development / Sales Manager" --area="Milan (ITA)"  --occupation-level=3 --area-level=2`
+3. Get a taxonomy
+     * `lightcast-smart-dataset taxonomy soc4 --username=**** --password=****`
 
 ### Results
 

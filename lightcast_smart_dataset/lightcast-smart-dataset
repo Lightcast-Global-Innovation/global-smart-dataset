@@ -99,7 +99,7 @@ if __name__ == '__main__':
             uknuts3 = pd.DataFrame.from_dict(response)
             uknuts3.to_excel("uk-nuts3t.xlsx")
 
-    if args.get('uk'):
+    elif args.get('uk'):
         client = LightcastSmartDataset(username=username, password=password)
         if args.get('soc') and args.get('occupation-insight'):
             response = client.ukDataset().getSocOccupationInsight(
