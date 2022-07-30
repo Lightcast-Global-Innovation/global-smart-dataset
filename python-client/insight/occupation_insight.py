@@ -264,8 +264,7 @@ class OccupationInsight:
             raise e
 
     def __insight(self, request: InsightRequest) -> OccupationInsightResponse:
-        oauth = OAuthClient(self.__auth_url, "POST", self.__username,
-                            self.__password)
+        oauth = OAuthClient(self.__auth_url, self.__username, self.__password)
         raw_response = self.__insight_request.write_request(self.__url, request, oauth)
         response = self.__insight_response.deserialize(raw_response)
         return response
