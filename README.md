@@ -17,7 +17,7 @@ https://solutions-api.lightcast.io/docs
 
 
 Notebooks:
-- [Global Smart Dataset - Notebooks](https://raw.githubusercontent.com/Lightcast-Global-Innovation/global-smart-dataset/main/notebooks/Lightcast_Global_Smart_Dataset.ipynb)
+- [Global Smart Dataset - Notebooks](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/blob/main/notebooks/Lightcast_Global_Smart_Dataset.ipynb)
 
 
 # MIT License
