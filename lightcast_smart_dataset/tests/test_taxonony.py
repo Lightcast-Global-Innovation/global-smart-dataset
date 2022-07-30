@@ -3,7 +3,7 @@ from unittest import TestCase
 from mock import Mock
 
 from lightcast_client.taxonomy import Taxonomy
-from lightcast_insight.taxonomy_insight import TaxonomyInsight, TaxonomyRequest, TaxonomyResponse
+from lightcast_insight.taxonomy_insight import TaxonomyInsight, TaxonomyResponse
 
 
 class TaxonomyTests(TestCase):
@@ -35,10 +35,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getSocLevel4()
 
         self.assertEqual(r, response.codelist["data"])
@@ -48,10 +48,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getSocLevel3()
 
         self.assertEqual(r, response.codelist["data"])
@@ -61,10 +61,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getSocLevel2()
 
         self.assertEqual(r, response.codelist["data"])
@@ -74,10 +74,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getSocLevel1()
 
         self.assertEqual(r, response.codelist["data"])
@@ -87,10 +87,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getGlobalMarket()
 
         self.assertEqual(r, response.codelist["data"])
@@ -100,10 +100,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getUkLocalAreaUnit()
 
         self.assertEqual(r, response.codelist["data"])
@@ -113,10 +113,10 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getUkNuts3()
 
         self.assertEqual(r, response.codelist["data"])
@@ -126,13 +126,14 @@ class TaxonomyTests(TestCase):
         response = TaxonomyResponse()
         response.raw_response = {}
         response.codelist = {"data": []}
-        
+
         get.get.return_value = response
         client = Taxonomy(get)
-        
+
         r = client.getOccupation()
 
         self.assertEqual(r, response.codelist["data"])
+
 
 if __name__ == '__main__':
     unittest.main()

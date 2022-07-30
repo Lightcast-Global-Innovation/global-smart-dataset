@@ -138,7 +138,6 @@ class GlobalTests(TestCase):
                 },
                 "top_10_specialized_skills": {
                     "results": [
-                    
                     ],
                     "limit": 10,
                     "rank_by": "unique_postings",
@@ -146,7 +145,6 @@ class GlobalTests(TestCase):
                 },
                 "top_10_common_skills": {
                     "results": [
-                    
                     ],
                     "limit": 10,
                     "rank_by": "unique_postings",
@@ -154,7 +152,6 @@ class GlobalTests(TestCase):
                 },
                 "top_10_employers": {
                     "results": [
-                    
                     ],
                     "limit": 10,
                     "rank_by": "unique_postings",
@@ -162,7 +159,6 @@ class GlobalTests(TestCase):
                 },
                 "top_10_job_titles": {
                     "results": [
-                    
                     ],
                     "limit": 10,
                     "rank_by": "unique_postings",
@@ -192,13 +188,12 @@ class GlobalTests(TestCase):
     def test_get_occupation_insight_call_return_occupation_insight_response(self):
         client = Mock(spec=OccupationInsightRequestClient)
         client.write_request.return_value = self.response
-        insight = OccupationInsight(
-            url = "xxx",
-            auth_url = "xxx",
-            username = "xxx",
-            password = "xxx",
-            insight_response=BasicOccupationInsightResponseParser(),
-            insight_request=client)
+        insight = OccupationInsight(url="xxx",
+                                    auth_url="xxx",
+                                    username="xxx",
+                                    password="xxx",
+                                    insight_response=BasicOccupationInsightResponseParser(),
+                                    insight_request=client)
 
         global_dataset = Global(insight)
 
