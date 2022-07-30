@@ -1,5 +1,5 @@
 
-from insight.taxonomy_insight import TaxonomyInsight, \
+from lightcast_smart_dataset. insight.taxonomy_insight import TaxonomyInsight, \
     TaxonomyRequestClient, \
     TaxonomyRequest, \
     TaxonomyResponse, \
@@ -21,7 +21,7 @@ class Taxonomy:
         request.facet = "soc4"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getSocLevel3(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
@@ -29,7 +29,7 @@ class Taxonomy:
         request.facet = "soc3"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getSocLevel2(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
@@ -37,7 +37,7 @@ class Taxonomy:
         request.facet = "soc2"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getSocLevel1(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
@@ -45,15 +45,15 @@ class Taxonomy:
         request.facet = "soc1"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getOccupation(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
         request.source = "uk"
-        request.facet = "occupation2"
+        request.facet = "occupation"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getUkNuts3(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
@@ -61,7 +61,7 @@ class Taxonomy:
         request.facet = "nuts3"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getUkLocalAreaUnit(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
@@ -69,7 +69,7 @@ class Taxonomy:
         request.facet = "nuts4"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']
 
     def getGlobalMarket(self) -> TaxonomyResponse:
         request = TaxonomyRequest()
@@ -77,4 +77,4 @@ class Taxonomy:
         request.facet = "market"
 
         response = self.__client.get(request)
-        return response['data']
+        return response.codelist['data']

@@ -1,6 +1,7 @@
 from abc import ABCMeta
-from client.OAuthClient import OAuthClient
+from lightcast_smart_dataset.OAuthClient import OAuthClient
 import requests
+import json
 
 
 class TaxonomyRequest:
@@ -8,7 +9,6 @@ class TaxonomyRequest:
     def __init__(self):
         self.source = None
         self.facet = None
-        self.limit = None
 
     @property
     def source(self) -> str:
@@ -25,14 +25,6 @@ class TaxonomyRequest:
     @facet.setter
     def facet(self, facet: str) -> None:
         self.__facet = facet
-
-    @property
-    def limit(self) -> str:
-        return self.__limit
-
-    @limit.setter
-    def limit(self, limit: str) -> None:
-        self.__limit = limit
 
 
 class TaxonomyResponse:
@@ -70,13 +62,13 @@ class RequestTaxonomy(metaclass=ABCMeta):
         raise NotImplementedError()
 
 
-class TaxonomyRequestClient(TaxonomyRequest):
+class TaxonomyRequestClient(RequestTaxonomy):
 
     def __create_parse_command(self,
                                url: str,
                                request: TaxonomyRequest) -> str:
 
-        return url + "/" + request.source + "/" + request.facet + "?limit=" + request.limit
+        return url + "/" + request.source + "/" + request.facet + "?limit=10000"
 
     def write_request(self, url: str, request: TaxonomyRequest, oauth: OAuthClient) -> str:
         headers = {'Content-Type': "application/json",
@@ -124,11 +116,11 @@ class TaxonomyInsight:
     def __get(self, request: TaxonomyRequest) -> TaxonomyResponse:
         oauth = OAuthClient(self.__auth_url, self.__username, self.__password)
         raw_response = self.__request.write_request(self.__url, request, oauth)
-        response = self.__insight_response.deserialize(raw_response)
+        response = self.__response.deserialize(raw_response)
         return response
 
 
-class BasicTaxonomyResponseParser(RequestTaxonomy):
+class BasicTaxonomyResponseParser(ResponseTaxonomy):
 
     def __init__(self):
         pass
@@ -136,7 +128,9 @@ class BasicTaxonomyResponseParser(RequestTaxonomy):
     def deserialize(self, raw_response: str):
 
         print(raw_response)
+        json_response = json.loads(raw_response)
         response = TaxonomyResponse()
         response.raw_response = raw_response
+        response.codelist = json_response
 
         return response

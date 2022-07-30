@@ -1,7 +1,7 @@
 
-from client.uk_dataset import UK
-from client.global_dataset import Global
-from client.taxonomy import Taxonomy
+from lightcast_smart_dataset.uk_dataset import UK
+from lightcast_smart_dataset.global_dataset import Global
+from lightcast_smart_dataset.taxonomy import Taxonomy
 
 
 class LightcastSmartDataset():
