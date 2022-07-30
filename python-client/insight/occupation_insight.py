@@ -224,7 +224,7 @@ class OccupationInsightRequestClient(InsightRequest):
         json_payload = self.__create_parse_command(request)
         headers = {'Content-Type': "application/json",
                    'Accept': "application/json",
-                   'Authorization': oauth.get_authorizationString()}
+                   'Authorization': oauth.getAuthorizationString()}
         response = requests.post(url, data=json_payload, headers=headers)
         return response.text.encode('utf8')
 
