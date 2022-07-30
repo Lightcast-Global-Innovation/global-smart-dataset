@@ -6,8 +6,6 @@
 This repository aims to show the use of Lightcast Global Smart Dataset.
 
 ![build](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/actions/workflows/publish-to-pypi.yml/badge.svg)
-![license](https://github.com/Lightcast-Global-Innovation/global-smart-dataset/blob/main/LICENSE)
-
 
 The Global Smart Dataset allows you to quickly access data from Lightcast's database to obtain contents, trends and projections regarding the labour market.
 

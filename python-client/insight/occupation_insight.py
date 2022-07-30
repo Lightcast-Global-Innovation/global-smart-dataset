@@ -233,7 +233,7 @@ class OccupationInsight:
 
     def __init__(self,
                  url: str = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1",
-                 auth_url: str = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1",
+                 auth_url: str = "https://solutions-api.lightcast.io/api/users/login",
                  username: str = "",
                  password: str = "",
                  insight_response: ResponseInsight = None,
