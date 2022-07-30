@@ -1,6 +1,7 @@
 
 from client.uk_dataset import UK
 from client.global_dataset import Global
+from client.taxonomy import Taxonomy
 
 
 class LightcastSmartDataset():
@@ -27,3 +28,6 @@ class LightcastSmartDataset():
 
     def globalDataset(self) -> Global:
         return Global(self.__username, self.__password)
+
+    def taxonomy(self) -> Taxonomy:
+        return Taxonomy(self.__username, self.__password)

@@ -11,6 +11,10 @@ Usage:
     lightcast-smart-dataset global occupation-insight occupation --username=<username> --password=<password> --occupation=<occupation> --area=<area>
     [--area-level=<level>]
     [--occupation-level=<level>]
+    lightcast-smart-dataset taxonomy occupation
+    lightcast-smart-dataset taxonomy soc4
+    lightcast-smart-dataset taxonomy global-market
+    lightcast-smart-dataset taxonomy uk-nuts3
     lightcast-smart-dataset -h | --help
 
 
@@ -19,6 +23,7 @@ Options:
     uk|global                     Use the UK Lightcast dataset or the global Lightcast dataset
     occupation-insight            Use the Occupation Insight API
     soc|occupation                Use the SOC or the Lightcast Occupation library
+    taxonomy                      Download a specific taxonomy
     --username=<username>         Your username
     --password=<password>         Your password
     --occupation=<occupation>     The label of the desidered occupation
@@ -43,7 +48,8 @@ def export_results(response):
     ds_top_10_job_titles = pd.DataFrame.from_dict(response.top_10_job_titles)
     ds_top_10_employers = pd.DataFrame.from_dict(response.top_10_employers)
 
-    ts = datetime.timestamp()
+    ct = datetime.datetime.now()
+    ts = ct.timestamp()
     writer = pd.ExcelWriter(f'lightcast_occupation_insight{ts}.xlsx',engine='xlsxwriter')   
     workbook=writer.book
     ws_time_serie=workbook.add_worksheet('time_serie')
@@ -70,6 +76,14 @@ if __name__ == '__main__':
     area = args.get('--area')
     occupation_level = args.get('--occupation-level')
     area_level = args.get('--area-level')
+
+
+    if args.get('taxonomy'):
+        client = LightcastSmartDataset(username=username, password=password)
+        if args.get('soc4'):
+            response = client.taxonomy().getSocLevel4()
+            soc4_occupation = pd.DataFrame.from_dict(response)
+            soc4_occupation.to_excel("soc4_occupation.xlsx")
 
     if args.get('uk'):
         client = LightcastSmartDataset(username=username, password=password)
