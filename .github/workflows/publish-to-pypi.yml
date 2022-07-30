@@ -18,6 +18,21 @@ jobs:
           pip install
           build
           --user
+      - name: Install flake8
+        run: >-
+          python -m
+          pip install
+          flake8
+          --user
+      - name: Install coverage
+        run: >-
+          python -m
+          pip install
+          coverage
+          --user
+      - name: Check flake8
+        run: >-
+          flake8 python-client
       - name: Build a binary wheel and a source tarball
         run: >-
           python -m

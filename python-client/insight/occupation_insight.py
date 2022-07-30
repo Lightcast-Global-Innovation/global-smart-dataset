@@ -1,6 +1,6 @@
 from abc import ABCMeta
 import json
-from lens_client.OAuthClient import OAuthClient
+from client.OAuthClient import OAuthClient
 import requests
 
 

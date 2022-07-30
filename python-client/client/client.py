@@ -1,7 +1,7 @@
 
 from abc import ABCMeta
-from uk_dataset import UK
-from global_dataset import Global
+from client.uk_dataset import UK
+from client.global_dataset import Global
 
 
 class Source(metaclass=ABCMeta):
@@ -32,5 +32,3 @@ class LightcastSmartDataset():
 
     def globalDataset(self) -> Global:
         return Global(self.__username, self.__password)
-
-
