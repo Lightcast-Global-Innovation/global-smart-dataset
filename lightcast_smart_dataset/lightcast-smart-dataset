@@ -31,7 +31,7 @@ Options:
     --area-level=<level>          Level 1,2,3,4 (for UK) or 1,2 (for Global)
     --occupation-level<level>     Level 1,2,3,4 (for Lightcast) or 1,2,3,4 (for SOC)
 """
-from lightcast_smart_dataset.client import LightcastSmartDataset
+from client import LightcastSmartDataset
 from docopt import docopt
 import sys
 import pandas as pd
