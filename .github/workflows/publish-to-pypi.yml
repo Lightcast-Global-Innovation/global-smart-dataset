@@ -12,11 +12,11 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.7"
-      - name: Install pypa/build and requests
+      - name: Install libs
         run: >-
           python -m
           pip install
-          build requests
+          build requests mock
           --user
       - name: Install flake8
         run: >-
