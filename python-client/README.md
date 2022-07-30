@@ -22,10 +22,10 @@ This module is using [docopt](http://docopt.org/) to parse command line argument
 
 It currently different methods:
 
-1. Get the occupation insights for software developers in Southampton, UK
-  * `lightcast-smart-dataset uk --occupation= --area=`
+1. Get the occupation insights for software developers in a area of UK
+  * `lightcast-smart-dataset uk occupation-insight soc --username=**** --password=**** --occupation="Programmers and software development professionals" --area="Camden and City of London"`
 2. Get the occupation insights for software developers in Milan, Italy
-  * `lightcast-smart-dataset global --occupation= --area=`
+  * `lightcast-smart-dataset global occupation-insight occupation --username=**** --password=**** --occupation="Data analysys" --area="Camden and City of London"`
 
 ### Results
 
