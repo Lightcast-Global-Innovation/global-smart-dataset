@@ -1,0 +1,18 @@
+[run]
+branch = True
+
+source =
+    client
+
+omit =
+    */tests/*
+    */examples/*
+    lens_client/OAuthClient.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
+
+fail_under = 70
+
