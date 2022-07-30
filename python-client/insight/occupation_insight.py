@@ -236,7 +236,7 @@ class OccupationInsight:
                  auth_url: str = "https://solutions-api.lightcast.io/smart-dataset/occupation-insight/v1",
                  username: str = "",
                  password: str = "",
-                 insight_response: OccupationInsightResponse = None,
+                 insight_response: ResponseInsight = None,
                  insight_request: InsightRequest = None) -> None:
         self.__url = url
         self.__auth_url = auth_url
@@ -251,9 +251,9 @@ class OccupationInsight:
 
         self.__insight_request = insight_request
 
-    def __setInsightResponse(self, insight_response: OccupationInsightResponse) -> None:
-        if not isinstance(insight_response, OccupationInsightResponse):
-            raise TypeError("insight_response is not an instance of OccupationInsightResponse.")
+    def __setInsightResponse(self, insight_response: ResponseInsight) -> None:
+        if not isinstance(insight_response, ResponseInsight):
+            raise TypeError("insight_response is not an instance of ResponseInsight.")
 
         self.__insight_response = insight_response
 
