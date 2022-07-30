@@ -4,16 +4,12 @@ from client.OAuthClient import OAuthClient
 import requests
 
 
-class OccupationInsightRequest:
+class TaxonomyRequest:
 
     def __init__(self):
         self.source = None
-        self.occupation = None
-        self.area = None
-        self.occupation_level = None
-        self.area_level = None
-        self.occupation_classification = None
-        self.area_classification = None
+        self.facet = None
+        self.limit = None
 
     @property
     def source(self) -> str:
@@ -83,6 +79,8 @@ class OccupationInsightResponse:
 
     @raw_response.setter
     def raw_response(self, raw_response: str) -> None:
+        if raw_response is not None and not isinstance(raw_response, str):
+            raise TypeError("raw_response must be a string")
         self.__raw_response = raw_response
 
     @property
@@ -91,6 +89,8 @@ class OccupationInsightResponse:
 
     @refresh_date.setter
     def refresh_date(self, refresh_date: str) -> None:
+        if refresh_date is not None and not isinstance(refresh_date, str):
+            raise TypeError("refresh_date must be a string")
         self.__refresh_date = refresh_date
 
     @property
