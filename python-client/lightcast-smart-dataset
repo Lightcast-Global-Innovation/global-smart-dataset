@@ -3,7 +3,8 @@
 
 Usage:
     lightcast-smart-dataset uk occupation-insight soc --username=<username> --password=<password> --occupation=<occupation> --area=<area>
-    [--area-level=<level>] [--occupation-level=<level>]
+    [--area-level=<level>]
+    [--occupation-level=<level>]
     lightcast-smart-dataset uk occupation-insight occupation --username=<username> --password=<password> --occupation=<occupation> --area=<area>
     [--area-level=<level>]
     [--occupation-level=<level>]
@@ -18,8 +19,8 @@ Options:
     uk|global                     Use the UK Lightcast dataset or the global Lightcast dataset
     occupation-insight            Use the Occupation Insight API
     soc|occupation                Use the SOC or the Lightcast Occupation library
-    --username                    Your username
-    --password                    Your password
+    --username=<username>         Your username
+    --password=<password>         Your password
     --occupation=<occupation>     The label of the desidered occupation
     --area=<area>                 The label of the desidered area
     --area-level=<level>          Level 1,2,3,4 (for UK) or 1,2 (for Global)
