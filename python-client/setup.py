@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name='lightcast-smart-dataset',
-    version='0.1.21',
+    version='0.1.22',
     scripts=['lightcast-smart-dataset'],
     author="Global Data Science Team - Lightcast",
     author_email="globaldatascience@lightcast.io",
@@ -19,6 +19,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=['requests',
+                      'xlsxwriter',
                       'pandas',
                       'docopt']
 )

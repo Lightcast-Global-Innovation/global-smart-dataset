@@ -11,10 +11,10 @@ Usage:
     lightcast-smart-dataset global occupation-insight occupation --username=<username> --password=<password> --occupation=<occupation> --area=<area>
     [--area-level=<level>]
     [--occupation-level=<level>]
-    lightcast-smart-dataset taxonomy occupation
-    lightcast-smart-dataset taxonomy soc4
-    lightcast-smart-dataset taxonomy global-market
-    lightcast-smart-dataset taxonomy uk-nuts3
+    lightcast-smart-dataset taxonomy occupation --username=<username> --password=<password>
+    lightcast-smart-dataset taxonomy soc4 --username=<username> --password=<password>
+    lightcast-smart-dataset taxonomy global-market --username=<username> --password=<password>
+    lightcast-smart-dataset taxonomy uk-nuts3 --username=<username> --password=<password>
     lightcast-smart-dataset -h | --help
 
 
@@ -84,6 +84,18 @@ if __name__ == '__main__':
             response = client.taxonomy().getSocLevel4()
             soc4_occupation = pd.DataFrame.from_dict(response)
             soc4_occupation.to_excel("soc4_occupation.xlsx")
+        if args.get('occupation'):
+            response = client.taxonomy().getOccupation()
+            occupation = pd.DataFrame.from_dict(response)
+            occupation.to_excel("occupation.xlsx")
+        if args.get('global-market'):
+            response = client.taxonomy().getGlobalMarket()
+            globalmarket = pd.DataFrame.from_dict(response)
+            globalmarket.to_excel("global-market.xlsx")
+        if args.get('uk-nuts3'):
+            response = client.taxonomy().getUkNuts3()
+            uknuts3 = pd.DataFrame.from_dict(response)
+            uknuts3.to_excel("uk-nuts3t.xlsx")
 
     if args.get('uk'):
         client = LightcastSmartDataset(username=username, password=password)

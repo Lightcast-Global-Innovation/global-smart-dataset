@@ -29,24 +29,12 @@ It currently different methods:
 
 ### Results
 
-The command line interface will create different CSV file:
-- trends.csv with the current 12 months of unique job postings vs the last 12 months of unique job postings
-- skills.csv with the top 10 common skills, top 10 specialized skills in the area refered to the last 12 months for the requested occupation
-- job_tiles.csv with the top 10 job tiles in the area refered to the last 12 months for the requested occupation
-- employers.csv with the top 10 employers in the area refered to the last 12 months for the requested occupation (only employers, no staffic company)
+The command line interface will create different Excel file with different sheets:
+- the current 12 months of unique job postings vs the last 12 months of unique job postings
+- the top 10 common skills, top 10 specialized skills in the area refered to the last 12 months for the requested occupation
+- the top 10 job tiles in the area refered to the last 12 months for the requested occupation
+- the top 10 employers in the area refered to the last 12 months for the requested occupation (only employers, no staffic company)
 
-
-### How release a new module
-
-To release a new module you have to use:
-- pypi
-- twine
-
-For example, to deploy the 0.1.1 version:
-```
-python setup.py sdist
-twine upload dist/*0.1.1* -r pypi
-```
 
 ### License
 
