@@ -191,11 +191,6 @@ class BasicOccupationInsightResponseParser(ResponseInsight):
     def __init__(self):
         pass
 
-    def __check_error(self, response: str):
-        error_message = ""
-        if error_message:
-            raise Exception(error_message)
-
     def deserialize(self, raw_response: str):
         json_response = json.loads(raw_response)
         refresh_date = json_response["date"]

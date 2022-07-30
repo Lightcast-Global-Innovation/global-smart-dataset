@@ -2,22 +2,12 @@
 """lightcast-smart-dataset
 
 Usage:
-    lightcast-smart-dataset uk occupation-insight soc
-    --username=<username>
-    --password=<password>
-    --occupation=<occupation> --area=<area>
+    lightcast-smart-dataset uk occupation-insight soc --username=<username> --password=<password> --occupation=<occupation> --area=<area>
+    [--area-level=<level>] [--occupation-level=<level>]
+    lightcast-smart-dataset uk occupation-insight occupation --username=<username> --password=<password> --occupation=<occupation> --area=<area>
     [--area-level=<level>]
     [--occupation-level=<level>]
-    lightcast-smart-dataset uk occupation-insight occupation
-    --username=<username>
-    --password=<password>
-    --occupation=<occupation> --area=<area>
-    [--area-level=<level>]
-    [--occupation-level=<level>]
-    lightcast-smart-dataset global occupation-insight occupation
-    --username=<username>
-    --password=<password>
-    --occupation=<occupation> --area=<area>
+    lightcast-smart-dataset global occupation-insight occupation --username=<username> --password=<password> --occupation=<occupation> --area=<area>
     [--area-level=<level>]
     [--occupation-level=<level>]
     lightcast-smart-dataset -h | --help

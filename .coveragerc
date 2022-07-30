@@ -7,7 +7,7 @@ source =
 omit =
     */tests/*
     */examples/*
-    lens_client/OAuthClient.py
+    client/OAuthClient.py
 
 [report]
 exclude_lines =
