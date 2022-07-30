@@ -1,5 +1,5 @@
 
-from lightcast_smart_dataset. insight.taxonomy_insight import TaxonomyInsight, \
+from lightcast_insight.taxonomy_insight import TaxonomyInsight, \
     TaxonomyRequestClient, \
     TaxonomyRequest, \
     TaxonomyResponse, \

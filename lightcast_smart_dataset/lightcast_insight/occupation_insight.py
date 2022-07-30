@@ -1,6 +1,6 @@
 from abc import ABCMeta
 import json
-from lightcast_smart_dataset.lightcast_client.OAuthClient import OAuthClient
+from lightcast_client.OAuthClient import OAuthClient
 import requests
 
 

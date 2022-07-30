@@ -1,6 +1,6 @@
 
 
-from lightcast_smart_dataset.insight.occupation_insight import OccupationInsight, \
+from lightcast_insight.occupation_insight import OccupationInsight, \
     BasicOccupationInsightResponseParser, \
     OccupationInsightRequestClient, \
     OccupationInsightRequest, \
