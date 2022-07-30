@@ -15,7 +15,8 @@ Install
 To install or install/upgrade the package it's best to use pip:
 `pip install -U lightcast-smart-dataset`
 
-### How it works
+How it works
+---------------
 
 You can use the client in two ways:
 - Command line
@@ -42,7 +43,8 @@ Results
 ---------------
 
 The command line interface will create different Excel file with different sheets:
-- the current 12 months of unique job postings vs the last 12 months of unique job postings
-- the top 10 common skills, top 10 specialized skills in the area refered to the last 12 months for the requested occupation
-- the top 10 job tiles in the area refered to the last 12 months for the requested occupation
-- the top 10 employers in the area refered to the last 12 months for the requested occupation (only employers, no staffic company)
+
+* the current 12 months of unique job postings vs the last 12 months of unique job postings
+* the top 10 common skills, top 10 specialized skills in the area refered to the last 12 months for the requested occupation
+* the top 10 job tiles in the area refered to the last 12 months for the requested occupation
+* the top 10 employers in the area refered to the last 12 months for the requested occupation (only employers, no staffic company)
