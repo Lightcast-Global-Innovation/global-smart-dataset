@@ -119,6 +119,36 @@ class OccupationInsightResponse:
             raise TypeError("previous_year_active_postings must be a list")
         self.__previous_year_active_postings = previous_year_active_postings
 
+    @property
+    def salary_min(self) -> str:
+        return self.__salary_min
+
+    @salary_min.setter
+    def salary_min(self, salary_min: str) -> None:
+        if salary_min is not None and not isinstance(salary_min, float):
+            raise TypeError("salary_min must be a float")
+        self.__salary_min = salary_min
+
+    @property
+    def salary_max(self) -> str:
+        return self.__salary_max
+
+    @salary_max.setter
+    def salary_max(self, salary_max: str) -> None:
+        if salary_max is not None and not isinstance(salary_max, float):
+            raise TypeError("salary_max must be a float")
+        self.__salary_max = salary_max
+
+    @property
+    def salary_median(self) -> str:
+        return self.__salary_median
+
+    @salary_median.setter
+    def salary_median(self, salary_median: str) -> None:
+        if salary_median is not None and not isinstance(salary_median, float):
+            raise TypeError("salary_median must be a float")
+        self.__salary_median = salary_median
+
 
 class ResponseInsight(metaclass=ABCMeta):
 
@@ -208,10 +238,17 @@ class BasicOccupationInsightResponseParser(ResponseInsight):
 
         current_year_active_postings = json_response["current_year_active_postings"]["results"]
         previous_year_active_postings = json_response["previous_year_active_postings"]["results"]
-        
+
+        salary_max = json_response["salary"]["max"]
+        salary_min = json_response["salary"]["min"]
+        salary_median = json_response["salary"]["median"]
+
         response = OccupationInsightResponse()
         response.raw_response = raw_response
         response.refresh_date = refresh_date
         response.current_year_active_postings = current_year_active_postings
         response.previous_year_active_postings = previous_year_active_postings
+        response.salary_max = salary_max
+        response.salary_min = salary_min
+        response.salary_median = salary_median
         return response
